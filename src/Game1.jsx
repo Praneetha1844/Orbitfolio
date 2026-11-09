@@ -62,16 +62,19 @@ const Game1 = () => {
           onMouseMove={draw}
           onMouseUp={stopDrawing}
           onMouseLeave={stopDrawing}
+          role="img"
+          aria-label="Drawing canvas"
         ></canvas>
       </div>
       <div className="controls">
         <div className="color-picker">
-          <label>Choose Color:</label>
-          <input type="color" value={color} onChange={handleColorChange} />
+          <label htmlFor="color">Choose Color:</label>
+          <input id="color" type="color" value={color} onChange={handleColorChange} />
         </div>
         <div className="brush-size">
-          <label>Brush Size:</label>
+          <label htmlFor="brush">Brush Size:</label>
           <input
+            id="brush"
             type="range"
             min="1"
             max="20"
@@ -79,7 +82,7 @@ const Game1 = () => {
             onChange={handleBrushSizeChange}
           />
         </div>
-        <button className="clear-btn" onClick={clearCanvas}>
+        <button type="button" className="clear-btn" onClick={clearCanvas}>
           Clear Canvas
         </button>
       </div>

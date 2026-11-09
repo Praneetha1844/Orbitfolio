@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Projects from './Projects';
 import AboutMe from './AboutMe';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function LandingPage() {
   const [scrollY, setScrollY] = useState(0);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +36,8 @@ function LandingPage() {
           autoPlay
           loop
           muted
+          playsInline
+          aria-hidden="true"
           style={{
             transform: `scale(${zoomEffect})`,
             transition: 'transform 0.1s ease-out',
@@ -55,25 +56,14 @@ function LandingPage() {
               <button onClick={() => handleNavClick('about-me')} className="hover:text-gray-300 cursor-pointer">
                 About Me
               </button>
-              <button onClick={() => handleNavClick('contact')} className="hover:text-gray-300 cursor-pointer">
-                Contact
-              </button>
               <Link to="/games" className="hover:text-gray-300 cursor-pointer">
                 Games
               </Link>
-              <button onClick={() => handleNavClick('blog')} className="hover:text-gray-300 cursor-pointer">
-                Blog
-              </button>
-            </div>
-            <div className="ml-auto">
-              <button className="absolute top-[20px] right-[100px] h-[40px] px-4 py-2 rounded-lg border-2 border-white text-white font-semibold hover:bg-white hover:text-black">
-                Log In
-              </button>
             </div>
           </nav>
 
           <div className="absolute top-[20px] left-[20px] text-white text-[50px] font-['Yesteryear'] leading-[86px] z-20">
-            Gritex
+            Praneetha Potharaju
           </div>
 
           <div className="bg-black bg-opacity-70 p-8 rounded-lg shadow-md max-w-[600px]">
@@ -99,7 +89,7 @@ function LandingPage() {
       </div>
 
       <footer className="text-center py-4 text-sm text-white bg-[#000000]">
-        © 2024 Praneetha Potharaju. All rights reserved.
+        © {new Date().getFullYear()} Praneetha Potharaju. All rights reserved.
       </footer>
     </div>
   );

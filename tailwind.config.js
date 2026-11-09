@@ -1,5 +1,3 @@
-// tailwind.config.js
-
 module.exports = {
   content: [
     "./src/**/*.{html,js,jsx,ts,tsx}",
@@ -16,7 +14,6 @@ module.exports = {
         body: ['"Inter"', 'sans-serif'],
       },
       fontSize: {
-        '2xl': '50rem',
         '3xl': '3rem',
       },
     },

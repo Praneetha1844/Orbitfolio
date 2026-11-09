@@ -37,26 +37,18 @@ function AboutMe() {
             LinkedIn
           </a>
           <a
-            href="https://www.instagram.com/yourprofile"
+            href="https://github.com/Praneetha1844"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-black text-white px-4 py-2 rounded-full text-sm font-semibold border border-white hover:bg-white hover:text-black mb-4 sm:mb-0"
           >
-            Instagram
-          </a>
-          <a
-            href="https://www.youtube.com/c/yourchannel"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-black text-white px-4 py-2 rounded-full text-sm font-semibold border border-white hover:bg-white hover:text-black"
-          >
-            YouTube
+            GitHub
           </a>
         </div>
       </div>
 
       {/* Right Photo */}
-      <div className="w-full lg:w-1/ flex justify-center items-center mt-8 lg:mt-0 lg:mr-64">
+      <div className="w-full flex justify-center items-center mt-8 lg:mt-0 lg:mr-64">
         <img
           src="/doi.jpg"
           alt="Praneetha Potharaju"
