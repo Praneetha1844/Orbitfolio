@@ -5,25 +5,30 @@ import { Link } from 'react-router-dom';
 
 function LandingPage() {
   const [scrollY, setScrollY] = useState(0);
+  const reduceMotion =
+    typeof window !== 'undefined' &&
+    window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
   useEffect(() => {
+    // The zoom is only visible while the hero is on screen, so clamp the value: once it stops
+    // changing, React skips the re-render and long scrolls stay cheap.
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      setScrollY(Math.min(window.scrollY, window.innerHeight));
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  const zoomEffect = 1 + scrollY * 0.001;
+  const zoomEffect = reduceMotion ? 1 : 1 + scrollY * 0.001;
 
   const handleNavClick = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
     }
   };
 
@@ -33,7 +38,7 @@ function LandingPage() {
         <video
           className="absolute top-0 left-0 w-full h-full object-cover"
           src="/bgvideo1.mp4"
-          autoPlay
+          autoPlay={!reduceMotion}
           loop
           muted
           playsInline
@@ -50,10 +55,10 @@ function LandingPage() {
               <Link to="/" className="hover:text-gray-300 cursor-pointer">
                 Home
               </Link>
-              <button onClick={() => handleNavClick('projects')} className="hover:text-gray-300 cursor-pointer">
+              <button type="button" onClick={() => handleNavClick('projects')} className="hover:text-gray-300 cursor-pointer">
                 Projects
               </button>
-              <button onClick={() => handleNavClick('about-me')} className="hover:text-gray-300 cursor-pointer">
+              <button type="button" onClick={() => handleNavClick('about-me')} className="hover:text-gray-300 cursor-pointer">
                 About Me
               </button>
               <Link to="/games" className="hover:text-gray-300 cursor-pointer">
@@ -73,7 +78,7 @@ function LandingPage() {
             <p className="text-[#f1f1f1] text-[21px] font-body leading-[34px] mt-4">
               Welcome to My Space! Where grit meets innovation, and every challenge is an opportunity. Dive in and explore my journey.
             </p>
-            <button onClick={() => handleNavClick('projects')} className="mt-6 bg-[#17192f] text-white px-6 py-4 rounded-lg shadow-inner text-lg font-semibold hover:bg-[#2d3155]">
+            <button type="button" onClick={() => handleNavClick('projects')} className="mt-6 bg-[#17192f] text-white px-6 py-4 rounded-lg shadow-inner text-lg font-semibold hover:bg-[#2d3155]">
               Explore My Work
             </button>
           </div>
