@@ -20,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .js,.jsx",
+    "test:ci": "react-scripts test --watchAll=false"
   },
   "eslintConfig": {
     "extends": [
@@ -44,5 +46,13 @@
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Praneetha1844/Orbitfolio.git"
+  },
+  "author": "Praneetha Potharaju",
+  "bugs": {
+    "url": "https://github.com/Praneetha1844/Orbitfolio/issues"
   }
 }
