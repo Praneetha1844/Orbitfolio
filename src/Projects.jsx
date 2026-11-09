@@ -3,23 +3,27 @@ import React, { useEffect, useRef } from 'react';
 const projectsData = [
   {
     title: 'WasteWhizIBM',
-    description: 'WasteWhizIBM is a data science project that uses machine learning and data analysis to improve marketing efficiency by optimizing customer targeting and decision-making.',
+    description:
+      'Data-science project using machine learning and data analysis to improve marketing efficiency by optimising customer targeting. Team project; the repository is owned by the SmartInternz organisation.',
     githubLink: 'https://github.com/smartinternz02/SBSPS-Challenge-10787-wastewhiz-Data-Science-enabled-Marketing-Efficiency-Enhancement',
   },
   {
-    title: 'Flappy Bird Game',
-    description: 'The Flappy Bird game in Python, built with Pygame, replicates the classic arcade game where players control a bird to avoid obstacles.',
-    githubLink: 'https://github.com/Praneetha1844/flappy',
+    title: 'WingDash',
+    description:
+      'A Flappy-Bird-style arcade game in Python and Pygame, split into game, rules and asset modules with unit tests for the rules.',
+    githubLink: 'https://github.com/Praneetha1844/WingDash',
   },
   {
-    title: 'Handwritten Character Detection',
-    description: 'Handwritten character detection using neural networks involves training deep learning models like Convolutional Neural Networks (CNNs) to classify and recognize handwritten characters.',
-    githubLink: 'https://github.com/Praneetha1844/CodeAlpha_HandwrittenCharacter_Detection',
+    title: 'InkSense',
+    description:
+      'A convolutional neural network notebook that classifies handwritten letters, with the dataset path, results and known issues documented.',
+    githubLink: 'https://github.com/Praneetha1844/InkSense',
   },
   {
-    title: 'Calculator',
-    description: 'A Java-based calculator project provides a user-friendly interface to perform basic arithmetic operations.',
-    githubLink: 'https://github.com/Praneetha1844/Calci',
+    title: 'ShuntCalc',
+    description:
+      'A Java calculator that evaluates expressions with the shunting-yard algorithm, with a small GUI and JUnit tests.',
+    githubLink: 'https://github.com/Praneetha1844/ShuntCalc',
   },
 ];
 
@@ -56,26 +60,26 @@ const Projects = () => {
 
   return (
     <div className="w-full min-h-screen bg-black py-10 px-4">
-      <h1 className="text-4xl font-bold text-white mb-10 text-center">My Projects</h1>
+      <h2 className="text-4xl font-bold text-white mb-10 text-center">My Projects</h2>
       <div className="container mx-auto flex flex-wrap justify-center gap-20">
         {projectsData.map((project, index) => (
           <a
-            key={index}
+            key={project.title}
             href={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
             className="group relative bg-white p-6 w-[220px] sm:w-[240px] md:w-[260px] lg:w-[280px] xl:w-[300px] rounded-xl shadow-xl hover:shadow-2xl project-card"
             ref={(el) => cardsRef.current[index] = el} // Store reference to each card
           >
-            <div className="flex flex-col justify-between h-[250px]">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4 group-hover:text-purple-600 transition-colors">
+            <div className="flex flex-col justify-between min-h-[250px]">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4 group-hover:text-purple-700 transition-colors">
                 {project.title}
-              </h2>
+              </h3>
               <p className="text-sm text-gray-600 mb-4 description">
                 {project.description}
               </p>
               <div className="text-right">
-                <span className="text-indigo-500 text-sm font-medium group-hover:text-blue-600 transition-colors">
+                <span className="text-indigo-700 text-sm font-medium group-hover:text-blue-800 transition-colors">
                   View on GitHub →
                 </span>
               </div>
