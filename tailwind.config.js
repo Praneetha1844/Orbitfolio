@@ -13,9 +13,6 @@ module.exports = {
         heading: ['"Amatic SC"', 'sans-serif'],
         body: ['"Inter"', 'sans-serif'],
       },
-      fontSize: {
-        '3xl': '3rem',
-      },
     },
   },
   plugins: [],
