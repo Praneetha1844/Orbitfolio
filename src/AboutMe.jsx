@@ -13,7 +13,7 @@ function AboutMe() {
       {/* Left Content */}
       <div className="max-w-lg text-left mx-auto lg:ml-64 lg:mr-0">
         {/* Centered Heading */}
-        <h1 className="text-4xl font-bold mb-6 text-white text-center lg:text-left">About Me</h1>
+        <h2 className="text-4xl font-bold mb-6 text-white text-center lg:text-left">About Me</h2>
 
         {/* Left-Aligned Paragraphs */}
         <p className="text-lg leading-relaxed text-white">
